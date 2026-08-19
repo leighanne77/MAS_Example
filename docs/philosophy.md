@@ -69,6 +69,17 @@ the human is there to supply, and automating it away would defeat the point of h
 What it enforces is that the reviewer was *equipped*: gaps surfaced, unsourced material already
 excluded, sources listed.
 
+## Review from outside the author's blind spots
+
+The same logic applies one level up, to the code of this repository itself. Much of it is
+written with model assistance, and a reviewer from the same model family as the author was
+trained on much the same distribution — it tends to miss what the author missed. So changes
+here carry a review record (`reviews/`) naming the authoring model family and a red-team
+reviewer from a **different** family, and a test fails any change-set that lands without its
+record — or any record where the two families match. As with the human gate above, the
+contract does not judge whether the review was good; that remains judgment. It makes skipping
+the review a visible, deliberate act instead of a quiet one.
+
 ## What this costs
 
 Honesty about the tradeoff: this design is more work up front, and it will refuse things you

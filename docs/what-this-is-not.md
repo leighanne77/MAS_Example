@@ -28,6 +28,16 @@ derivation. It cannot tell you:
 
 Every one of those is interpretive, and every one is why the human gate exists.
 
+## Not a decision-maker
+
+The output is decision *support*: a record a person reads, questions, and carries into their
+own process. It is not a decision, a recommendation engine, or a component to automate one.
+There is deliberately no API, no callback, no integration path — the export is a static
+document, and the only thing that moves it downstream is a human choosing to move it. A system
+whose output flows unattended into another system's inputs has quietly become the
+decision-maker, whatever its documentation says; the boundary here is that a person stands
+between this record and every consequence of it.
+
 ## Not production infrastructure
 
 No persistence, no API, no authentication, no concurrency, no versioning of records over time,

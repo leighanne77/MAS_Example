@@ -1,0 +1,19 @@
+# The gates, run publicly. The negative tests are the persuasive artifact — a green
+# check is the claim "the invalid object is unconstructible" being verified on every
+# push, rather than asserted in prose.
+name: gates
+on:
+  push:
+  pull_request:
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # the review gate inspects HEAD~1..HEAD; depth 1 would blind it
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pydantic>=2.0" pytest
+      - run: pytest
